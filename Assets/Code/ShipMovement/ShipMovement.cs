@@ -5,13 +5,11 @@ using System.Collections;
 public class ShipMovementStats {
 
 	public float speed;
-	[Tooltip("Value between 0 and 100")]
-	public float acceleration;
-	[Tooltip("Value between 0 and 100")]
+	[Range(0.0f, 1.0f)]
+    public float acceleration;
+	[Range(0.0f, 1.0f)]
 	public float deceleration;
 	public float turnSpeed;
-
-	public float currentSpeed { get; set; }
 
 	public ShipMovementStats() {
 	}

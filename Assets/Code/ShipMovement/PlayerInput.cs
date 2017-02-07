@@ -32,6 +32,8 @@ public class PlayerInput : MonoBehaviour {
 		if (Input.GetAxis("Fire2") != 0) {
 			mover.MoveToFacing();
 		}
-		mover.FacePoint(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+
+		//Look at mouse position
+		//mover.FacePoint(Camera.main.ScreenToWorldPoint(Input.mousePosition));
 	}
 }

@@ -1,38 +1,35 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-//Rigidbody is used to move the ship, so one is required
-[RequireComponent(typeof(Rigidbody2D))]
 public class ShipMover : MonoBehaviour {
+	public float visibleSpeed;
 
 	//Holds values for movement. Can be set in editor
 	public ShipMovementStats movementStats;
-	Rigidbody2D rigidBody;
 
 	//Input sockets
 	Vector2 movementInput;
 
-	//Acceleration / Deceleration magic number helpers
-	static int ACCELERATION_FIXER = 2;
-	static int DECELERATION_FIXER = 500;
+	//Dynamic movement stats
+	Vector2 currentSpeed;
 
 	// Use this for initialization
 	void Start() {
 		//Cache needed components
-		rigidBody = gameObject.GetComponent<Rigidbody2D>();
 		Mathf.Clamp(movementStats.acceleration, 0, 100);
 		Mathf.Clamp(movementStats.deceleration, 0, 100);
 	}
 	
 	// Update is called once per frame
 	void Update() {
-		movementStats.currentSpeed = Mathf.Abs(rigidBody.velocity.x) + Mathf.Abs(rigidBody.velocity.y);
 
 		if (movementInput.x == 0 && movementInput.y == 0) {
 			Decelerate();
 		} else {
 			Accelerate();
 		}
+
+		ApplyMovement();
 
 		//Reset inputs
 		movementInput.x = 0;
@@ -41,19 +38,26 @@ public class ShipMover : MonoBehaviour {
 
 	//Private functions
 	void Decelerate() {
-		rigidBody.velocity *= (DECELERATION_FIXER - movementStats.deceleration) / DECELERATION_FIXER;
+		currentSpeed *= 0.6f + ((1 - movementStats.deceleration) / 2.5f);
 	}
 
 	void Accelerate() {
-		rigidBody.AddForce(movementInput.normalized * (movementStats.acceleration / ACCELERATION_FIXER));
-		rigidBody.velocity = Vector3.ClampMagnitude(rigidBody.velocity, movementStats.speed);
+		currentSpeed += (movementInput * (movementStats.speed * movementStats.acceleration));
+	}
+
+	void ApplyMovement() {
+		//Clamp to max speed
+		visibleSpeed = Mathf.Abs(currentSpeed.x) + Mathf.Abs(currentSpeed.y);
+
+		if (Mathf.Abs(currentSpeed.x) + Mathf.Abs(currentSpeed.y) > movementStats.speed) {
+			currentSpeed = currentSpeed.normalized * movementStats.speed;
+		}
+
+		this.transform.position += new Vector3(currentSpeed.x, currentSpeed.y, 0) * Time.deltaTime;
 	}
 
 	bool InputMatchesVelocity() {
-		Vector2 rigidBodySigns = new Vector2(Mathf.Sign(rigidBody.velocity.x), Mathf.Sign(rigidBody.velocity.y));
-		Vector2 movementSigns = new Vector2(Mathf.Sign(movementInput.x), Mathf.Sign(movementInput.y));
-
-        return rigidBodySigns == movementSigns;
+		return true;
 	}
 
 	//These functions are called by an input handler or ai script to move the ship
