@@ -8,7 +8,7 @@ public class EnemySpawner : MonoBehaviour {
     public GameObject enemyToSpawn;
     public int spawnCount;
     public float spawnInterval;
-    public path defaultPath;
+    public path Path;
 
     float waitTime = 0.0f;
 
@@ -22,18 +22,17 @@ public class EnemySpawner : MonoBehaviour {
             //Spawn Enemy
             waitTime = spawnInterval;
             spawnCount--;
-            var spawned = Instantiate(enemyToSpawn, this.transform.position, this.transform.rotation) as GameObject;
-            spawned.GetComponent<AI_Pathfinder>().pathToFollow = defaultPath;
+            var spawned = Instantiate(enemyToSpawn, Path.transform.position, Path.transform.rotation) as GameObject;
+            spawned.GetComponent<AI_Pathfinder>().pathToFollow = Path;
         }
         if (waitTime > 0) {
             waitTime -= Time.deltaTime;
         }
     }
 
-    void OnDrawGizmosSelected() {
-        Gizmos.color = Color.magenta;
-        Gizmos.DrawSphere(transform.position, 0.05f);
-        Vector3 directionPoint = Quaternion.AngleAxis(transform.eulerAngles.z, Vector3.forward) * Vector3.up;
-        Gizmos.DrawLine(transform.position, transform.position + (directionPoint * 0.5f));
-    }
+	void OnDrawGizmosSelected() {
+		if (Path) {
+			Path.OnDrawGizmosSelected();
+		}
+	}
 }

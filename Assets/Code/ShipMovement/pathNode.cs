@@ -11,6 +11,7 @@ public class pathNode {
 	public float radius = 0.1f;
 	public float wait;
 	public commands command;
+	public int NextNode;
 
     //Worldspace coordinates
     public float x { get; protected set; }

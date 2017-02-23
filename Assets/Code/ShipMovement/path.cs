@@ -21,20 +21,21 @@ public class path : MonoBehaviour {
 	
     }
 
-    void OnDrawGizmosSelected() {
+    public void OnDrawGizmosSelected() {
         if (waypoints.Count <= 0)
             return;
 
         for (int i = 0; i < waypoints.Count; i++) {
-            Gizmos.color = Color.cyan;
+            Gizmos.color = i == 0 ? Color.red : Color.cyan;
             Vector3 currentPos = new Vector3(transform.position.x + waypoints[i].relx, transform.position.y + waypoints[i].rely);
             Gizmos.DrawSphere(currentPos, waypoints[i].radius);
 
-            if (i + 1 < waypoints.Count) {
-                Gizmos.color = Color.yellow;
-                Vector3 nextPos = new Vector3(transform.position.x + waypoints[i + 1].relx, transform.position.y + waypoints[i + 1].rely);
-                Gizmos.DrawLine(currentPos, nextPos);
-            }
+			int NextNode = waypoints[i].NextNode;
+			if (NextNode >= 0 && NextNode < waypoints.Count) {
+				Gizmos.color = Color.yellow;
+				Vector3 nextPos = new Vector3(transform.position.x + waypoints[NextNode].relx, transform.position.y + waypoints[NextNode].rely);
+				Gizmos.DrawLine(currentPos, nextPos);
+			}
         }
     }
 }

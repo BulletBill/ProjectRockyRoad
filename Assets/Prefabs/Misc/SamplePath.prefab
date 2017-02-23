@@ -23,7 +23,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 115110}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.75, y: 4.3, z: -10}
+  m_LocalPosition: {x: 4.47, y: 5.88, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -45,21 +45,25 @@ MonoBehaviour:
     radius: 0.1
     wait: 0
     command: 0
-  - relx: 2.44
-    rely: -1.32
+    NextNode: 1
+  - relx: -0.45
+    rely: -4.5
     radius: 0.1
     wait: 0
     command: 0
-  - relx: 1.46
-    rely: -3.28
+    NextNode: 2
+  - relx: -8.46
+    rely: -4.5
     radius: 0.1
     wait: 0
     command: 0
-  - relx: -2.36
+    NextNode: 3
+  - relx: -4.41
     rely: -2.88
     radius: 0.1
     wait: 0
     command: 0
+    NextNode: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

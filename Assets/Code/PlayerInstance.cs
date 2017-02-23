@@ -7,6 +7,9 @@ public class PlayerInstance : MonoBehaviour {
 	//List of items owned by the player
 	public List<Item> Items;
 
+	//Player stats
+	int Lives;
+
 	// Use this for initialization
 	void Start () {
 	
