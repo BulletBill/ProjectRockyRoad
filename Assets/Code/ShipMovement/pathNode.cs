@@ -4,7 +4,7 @@ using System.Collections;
 [System.Serializable]
 public class pathNode {
 
-	public enum commands { NONE, FIRE, REVERSE, DETONATE }
+	public enum commands { NONE, FIRE, DESTROY }
 
 	public float relx;
 	public float rely;

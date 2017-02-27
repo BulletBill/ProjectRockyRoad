@@ -22,8 +22,8 @@ public class EnemySpawner : MonoBehaviour {
             //Spawn Enemy
             waitTime = spawnInterval;
             spawnCount--;
-            var spawned = Instantiate(enemyToSpawn, Path.transform.position, Path.transform.rotation) as GameObject;
-            spawned.GetComponent<AI_Pathfinder>().pathToFollow = Path;
+            var spawned = Instantiate(enemyToSpawn, Path.Origin, Path.transform.rotation) as GameObject;
+            spawned.GetComponent<AI_Pathfinder>().SetPath(Path);
         }
         if (waitTime > 0) {
             waitTime -= Time.deltaTime;

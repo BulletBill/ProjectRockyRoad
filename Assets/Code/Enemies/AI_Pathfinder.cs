@@ -11,11 +11,12 @@ public class AI_Pathfinder : MonoBehaviour {
     public path pathToFollow;
 
     //Variables used by the game
-    int destinationPoint = 0;
+    int destinationNodeIndex = 0;
+	Vector2 destinationPos;
+	pathNode destinationNode;
 	float x;
 	float y;
     float wait = 0;
-    int direction = 1;
 
     //Cached ship objects
     WeaponCollective weapon;
@@ -24,7 +25,8 @@ public class AI_Pathfinder : MonoBehaviour {
 	void Start () {
         //Cache components
 		mover = GetComponent<ShipMover>();
-        weapon = GetComponent<WeaponCollective>();
+		weapon = GetComponent<WeaponCollective>();
+		destinationNode = pathToFollow.waypoints[destinationNodeIndex];
 	}
 	
 	// Update is called once per frame
@@ -36,33 +38,26 @@ public class AI_Pathfinder : MonoBehaviour {
 			wait -= Time.deltaTime;
 		}
 
-		if (destinationPoint < pathToFollow.waypoints.Count && destinationPoint >= 0 && wait <= 0) {
-			mover.FacePoint(new Vector3(pathToFollow.waypoints[destinationPoint].x, pathToFollow.waypoints[destinationPoint].y));
+		if (destinationNode != null && wait <= 0) {
+			//Put a thing in so it doesn't have to face where it is moving to
+			mover.FacePoint(destinationPos);
 			mover.MoveToFacing();
 
-			float distanceToWaypoint = Mathf.Sqrt(Mathf.Pow((x - pathToFollow.waypoints[destinationPoint].x), 2) + Mathf.Pow((y - pathToFollow.waypoints[destinationPoint].y), 2));
-			if (distanceToWaypoint < pathToFollow.waypoints[destinationPoint].radius) {
+			float distanceToWaypoint = Mathf.Sqrt(Mathf.Pow((x - destinationPos.x), 2) + Mathf.Pow((y - destinationPos.y), 2));
+			if (distanceToWaypoint < destinationNode.radius) {
 				HitWaypoint();
 			}
 		}
 	}
 
 	void HitWaypoint () {
-		wait = pathToFollow.waypoints[destinationPoint].wait;
-		ExecuteCommand(pathToFollow.waypoints[destinationPoint].command);
-        destinationPoint += direction;
+		wait = destinationNode.wait;
+		ExecuteCommand(destinationNode.command);
+        destinationNodeIndex = destinationNode.NextNode;
 
-        if (destinationPoint < 0 || destinationPoint > pathToFollow.waypoints.Count - 1) {
-            if (loop) {
-                if (direction == 1) {
-                    destinationPoint = 0;
-                }
-                if (direction == -1) {
-                    destinationPoint = pathToFollow.waypoints.Count - 1;
-                }
-            }
-        }
-    }
+		destinationNode = pathToFollow.waypoints[destinationNodeIndex];
+		destinationPos = pathToFollow.GetNodePos(destinationNodeIndex);
+	}
 
 	void ExecuteCommand(pathNode.commands command) {
 		if (command == pathNode.commands.FIRE) {
@@ -70,11 +65,15 @@ public class AI_Pathfinder : MonoBehaviour {
                 weapon.FireWeaponGroup(1);
             }
 		}
-		if (command == pathNode.commands.REVERSE) {
-            direction *= -1;
-		}
-		if (command == pathNode.commands.DETONATE) {
+		if (command == pathNode.commands.DESTROY) {
             GameObject.Destroy(this.gameObject);
         }
+	}
+
+	public void SetPath(path NewPath) {
+		pathToFollow = NewPath;
+		destinationNodeIndex = 0;
+		destinationNode = pathToFollow.waypoints[destinationNodeIndex];
+		destinationPos = pathToFollow.GetNodePos(destinationNodeIndex);
 	}
 }
