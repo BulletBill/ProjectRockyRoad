@@ -135,6 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14aae0bc1182586478daf3f7ec858190, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  visibleSpeed: 0
   movementStats:
     speed: 2
     acceleration: 1
@@ -288,6 +289,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: movementStats.deceleration
       value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: movementStats.turnSpeed
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

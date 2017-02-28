@@ -12,23 +12,39 @@ public class EnemySpawner : MonoBehaviour {
 
     float waitTime = 0.0f;
 
+	bool isSpawning = false;
+
 	// Use this for initialization
 	void Start () {
 	
     }
     // Update is called once per frame
 	void Update () {
+		if (isSpawning == false) { return; }
+		
 	    if (waitTime <= 0 && spawnCount > 0) {
             //Spawn Enemy
             waitTime = spawnInterval;
             spawnCount--;
             var spawned = Instantiate(enemyToSpawn, Path.Origin, Path.transform.rotation) as GameObject;
             spawned.GetComponent<AI_Pathfinder>().SetPath(Path);
+
+			if (spawnCount <= 0) {
+				FinishedSpawning();
+			}
         }
         if (waitTime > 0) {
             waitTime -= Time.deltaTime;
         }
     }
+
+	public void StartSpawning() {
+		isSpawning = true;
+	}
+
+	public void FinishedSpawning() {
+		GameObject.Destroy(this.gameObject);
+	}
 
 	void OnDrawGizmosSelected() {
 		if (Path) {

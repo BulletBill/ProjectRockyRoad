@@ -11,15 +11,19 @@ public class Encounter : MonoBehaviour {
 	List<GameObject> LivingEnemies;
 
 	//Rate of speed for spawning enemies
-	float SpeedMultiplier = 1.0f;
+	public float SpeedMultiplier = 1.0f;
 
 	// Use this for initialization
 	void Start () {
-	
+		foreach (EnemySpawner ES in GetComponentsInChildren<EnemySpawner>()) {
+			Spawns.Add(ES);
+		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		foreach (EnemySpawner ES in Spawns) {
+
+		}
 	}
 }
