@@ -12,11 +12,11 @@ public class EnemySpawner : MonoBehaviour {
 
     float waitTime = 0.0f;
 
-	bool isSpawning = false;
+	public bool isSpawning { get; protected set; }
 
 	// Use this for initialization
 	void Start () {
-	
+		isSpawning = false;
     }
     // Update is called once per frame
 	void Update () {
@@ -43,7 +43,6 @@ public class EnemySpawner : MonoBehaviour {
 	}
 
 	public void FinishedSpawning() {
-		GameObject.Destroy(this.gameObject);
 	}
 
 	void OnDrawGizmosSelected() {
