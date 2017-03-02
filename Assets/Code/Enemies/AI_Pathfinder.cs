@@ -7,7 +7,7 @@ public class AI_Pathfinder : MonoBehaviour {
 	ShipMover mover;
 
 	//Design variables set in editor
-	public bool loop = true;
+	public bool fixedFacing = false;
     public path pathToFollow;
 
     //Variables used by the game
@@ -39,9 +39,12 @@ public class AI_Pathfinder : MonoBehaviour {
 		}
 
 		if (destinationNode != null && wait <= 0) {
-			//Put a thing in so it doesn't have to face where it is moving to
-			mover.FacePoint(destinationPos);
-			mover.MoveToFacing();
+			if (fixedFacing) {
+				mover.MoveToPoint(destinationPos);
+			} else {
+				mover.FacePoint(destinationPos);
+				mover.MoveToFacing();
+			}
 
 			float distanceToWaypoint = Mathf.Sqrt(Mathf.Pow((x - destinationPos.x), 2) + Mathf.Pow((y - destinationPos.y), 2));
 			if (distanceToWaypoint < destinationNode.radius) {

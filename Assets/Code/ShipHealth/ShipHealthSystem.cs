@@ -57,7 +57,8 @@ public class ShipHealthSystem : MonoBehaviour {
 
 	//Flash sprite when hit
 	void FlashFromHit() {
-		sprite.color = Color.red;
-
+		if (sprite != null) {
+			sprite.color = Color.red;
+		}
 	}
 }

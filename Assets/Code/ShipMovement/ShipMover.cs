@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class ShipMover : MonoBehaviour {
-	public float visibleSpeed;
+	float visibleSpeed;
 
 	//Holds values for movement. Can be set in editor
 	public ShipMovementStats movementStats;
@@ -75,6 +75,10 @@ public class ShipMover : MonoBehaviour {
 	}
 	public void MoveToFacing() {
 		Vector2 dir = Quaternion.AngleAxis(transform.eulerAngles.z, Vector3.forward) * Vector3.up;
+		movementInput = dir.normalized;
+	}
+	public void MoveToPoint(Vector2 point) {
+		Vector2 dir = new Vector2(point.x - transform.position.x, point.y - transform.position.y);
 		movementInput = dir.normalized;
 	}
 	public void FacePoint (Vector3 facingTarget) {
