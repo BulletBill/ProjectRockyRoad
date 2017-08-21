@@ -1,9 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public interface IDamageable {
+	// Returns damage successfully dealt
+	float Damage(float InDamage);
+}
+
 [System.Serializable]
 [RequireComponent(typeof(SpriteRenderer))]
-public class ShipHealthSystem : MonoBehaviour {
+public class ShipHealthSystem : MonoBehaviour, IDamageable {
 
 	//Public values should be set in editor
 	public float maximumHealth;
@@ -23,7 +28,7 @@ public class ShipHealthSystem : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		//Convert 0-100 number to a useful 0-1 multiplicitive reduction
+		//Convert 0-100 number to a useful 0-1 multiplicative reduction
 		pdr = Mathf.Clamp(1 - (percentDamageReduction / 100), 0, 1);
 		health = maximumHealth;
 
@@ -47,12 +52,16 @@ public class ShipHealthSystem : MonoBehaviour {
 	}
 
 	//Damages health
-	public void Damage (float dmg) {
+	public float Damage (float dmg) {
+		float FinalDmg = 0.0f;
 		if (invulnerabilityPeriod <= 0) {
 			FlashFromHit();
 			invulnerabilityPeriod = invulnerabilityAfterHit;
-			health -= Mathf.Clamp((dmg - fixedDamageReduction), 0, dmg) * pdr;
+			FinalDmg = Mathf.Clamp((dmg - fixedDamageReduction), 0, dmg) * pdr;
+			health -= FinalDmg;
 		}
+
+		return FinalDmg;
 	}
 
 	//Flash sprite when hit

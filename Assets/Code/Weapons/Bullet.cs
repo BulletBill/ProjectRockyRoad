@@ -34,7 +34,7 @@ public class Bullet: MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject != owner && other != null) {
 			//Debug.Log("Hit object: " + gameObject.name);
-			ShipHealthSystem hp = other.gameObject.GetComponent<ShipHealthSystem>();
+			IDamageable hp = other.gameObject.GetComponent<IDamageable>();
 			if (hp != null) {
 				hp.Damage(damage);
 				hitSomething = true;
