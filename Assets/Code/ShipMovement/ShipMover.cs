@@ -7,6 +7,9 @@ public class ShipMover : MonoBehaviour {
 	//Holds values for movement. Can be set in editor
 	public ShipMovementStats movementStats;
 
+	//Turns the ship toward the movement vector
+	public bool turnTowardMove = false;
+
 	//Input sockets
 	Vector2 movementInput;
 
@@ -42,15 +45,15 @@ public class ShipMover : MonoBehaviour {
 	}
 
 	void Accelerate() {
-		currentSpeed += (movementInput * (movementStats.speed * movementStats.acceleration));
+		currentSpeed += (movementInput * (movementStats.topSpeed * movementStats.acceleration));
 	}
 
 	void ApplyMovement() {
 		//Clamp to max speed
 		visibleSpeed = Mathf.Abs(currentSpeed.x) + Mathf.Abs(currentSpeed.y);
 
-		if (Mathf.Abs(currentSpeed.x) + Mathf.Abs(currentSpeed.y) > movementStats.speed) {
-			currentSpeed = currentSpeed.normalized * movementStats.speed;
+		if (Mathf.Abs(currentSpeed.x) + Mathf.Abs(currentSpeed.y) > movementStats.topSpeed) {
+			currentSpeed = currentSpeed.normalized * movementStats.topSpeed;
 		}
 
 		this.transform.position += new Vector3(currentSpeed.x, currentSpeed.y, 0) * Time.deltaTime;

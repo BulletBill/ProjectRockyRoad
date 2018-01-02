@@ -26,14 +26,14 @@ public class PlayerInput : MonoBehaviour {
 		if (Input.GetAxisRaw("Vertical") > 0) {
 			mover.MoveUp();
 		}
-		if (Input.GetAxis("Fire1") != 0) {
+		if (Input.GetAxis("Fire1") != 0 && weapons != null) {
 			weapons.FireWeaponGroup(1);
 		}
-		if (Input.GetAxis("Fire2") != 0) {
+		if (Input.GetAxis("Fire2") != 0 && weapons != null) {
 			mover.MoveToFacing();
 		}
 
 		//Look at mouse position
-		//mover.FacePoint(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+		mover.FacePoint(Camera.main.ScreenToWorldPoint(Input.mousePosition));
 	}
 }

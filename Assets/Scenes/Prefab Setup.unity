@@ -302,7 +302,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!1001 &1062493474
 Prefab:
   m_ObjectHideFlags: 0
@@ -342,6 +342,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 184340, guid: 1fdca49601cc0b14e9dcbfcc66b8570f, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1fdca49601cc0b14e9dcbfcc66b8570f, type: 2}
   m_IsPrefabParent: 0
@@ -353,13 +357,16 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1375977300}
+  - 114: {fileID: 1375977302}
+  - 114: {fileID: 1375977301}
+  - 114: {fileID: 1375977303}
   m_Layer: 0
   m_Name: ModularShip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1375977300
 Transform:
   m_ObjectHideFlags: 0
@@ -375,6 +382,48 @@ Transform:
   - {fileID: 1559158699}
   m_Father: {fileID: 0}
   m_RootOrder: 5
+--- !u!114 &1375977301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1375977299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb95424b19106814d9c0b43ec897944d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1375977302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1375977299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14aae0bc1182586478daf3f7ec858190, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementStats:
+    acceleration: 0.75
+    deceleration: 0.8
+    topSpeed: 0
+    turnSpeed: 10
+    forwardMultiplier: 1
+  turnTowardMove: 0
+--- !u!114 &1375977303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1375977299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3c947abeaae15346bff461644c0fad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drawHardpoints: 1
+  weapons: []
 --- !u!1 &1443473431
 GameObject:
   m_ObjectHideFlags: 0

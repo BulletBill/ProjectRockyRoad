@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f53226a26ad298046bb4e459e3a00900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fixedFacing: 1
+  fixedFacing: 0
   pathToFollow: {fileID: 0}
 --- !u!212 &21230296
 SpriteRenderer:
@@ -292,6 +292,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: movementStats.turnSpeed
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: fixedFacing
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
