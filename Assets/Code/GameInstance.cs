@@ -16,6 +16,9 @@ public class GameInstance : MonoBehaviour {
 			DontDestroyOnLoad(this.gameObject);
 		} else {
 			GameObject.Destroy(this.gameObject);
+			return;
 		}
+
+		Player = new PlayerInstance();
 	}
 }
