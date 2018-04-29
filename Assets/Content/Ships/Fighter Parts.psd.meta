@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 2ce134094ac8db7428d3e118f0f09177
-timeCreated: 1519057699
+timeCreated: 1523411714
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -96,9 +96,9 @@ TextureImporter:
         x: 261
         y: 456
         width: 28
-        height: 31
-      alignment: 3
-      pivot: {x: 1, y: 1}
+        height: 30
+      alignment: 9
+      pivot: {x: 0.96428573, y: 0.8}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -149,12 +149,12 @@ TextureImporter:
       name: Fighter Parts_5
       rect:
         serializedVersion: 2
-        x: 73
+        x: 74
         y: 451
         width: 24
         height: 36
-      alignment: 3
-      pivot: {x: 1, y: 1}
+      alignment: 9
+      pivot: {x: 0.9166666, y: 0.8055555}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

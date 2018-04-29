@@ -19,6 +19,6 @@ public class GameInstance : MonoBehaviour {
 			return;
 		}
 
-		Player = new PlayerInstance();
+		Player = gameObject.AddComponent<PlayerInstance>();
 	}
 }

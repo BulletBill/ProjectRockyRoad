@@ -21,7 +21,9 @@ public class PlayerInstance : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-	
+		if (null == FocusObject) {
+			GameObject.FindGameObjectWithTag("player");
+		}
 	}
 	
 	// Update is called once per frame

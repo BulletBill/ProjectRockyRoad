@@ -164,11 +164,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4459533360373834, guid: 44a30e2dd90a510498ca141eb14e8b78, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.001
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4459533360373834, guid: 44a30e2dd90a510498ca141eb14e8b78, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.055
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4459533360373834, guid: 44a30e2dd90a510498ca141eb14e8b78, type: 2}
       propertyPath: m_LocalPosition.z
@@ -198,6 +198,11 @@ Prefab:
       propertyPath: m_Name
       value: Fighter Utility Side (Left)
       objectReference: {fileID: 0}
+    - target: {fileID: 212945370716810592, guid: 44a30e2dd90a510498ca141eb14e8b78,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 50cf27bb8fa39d44089784613116756a, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44a30e2dd90a510498ca141eb14e8b78, type: 2}
   m_IsPrefabParent: 0
@@ -215,11 +220,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4459533360373834, guid: 44a30e2dd90a510498ca141eb14e8b78, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.001
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4459533360373834, guid: 44a30e2dd90a510498ca141eb14e8b78, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.055
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4459533360373834, guid: 44a30e2dd90a510498ca141eb14e8b78, type: 2}
       propertyPath: m_LocalPosition.z
@@ -254,6 +259,11 @@ Prefab:
       propertyPath: m_Name
       value: Fighter Utility Side (Right)
       objectReference: {fileID: 0}
+    - target: {fileID: 212945370716810592, guid: 44a30e2dd90a510498ca141eb14e8b78,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 50cf27bb8fa39d44089784613116756a, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44a30e2dd90a510498ca141eb14e8b78, type: 2}
   m_IsPrefabParent: 0
@@ -296,6 +306,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1908624863157226, guid: 6fad822d834de834f8d765d3552743c7, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6fad822d834de834f8d765d3552743c7, type: 2}
   m_IsPrefabParent: 0
@@ -313,7 +327,7 @@ GameObject:
   - component: {fileID: 1375977304}
   m_Layer: 0
   m_Name: ModularShip
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -345,7 +359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb95424b19106814d9c0b43ec897944d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelfTurret: 0
+  SelfTurret: 1
 --- !u!114 &1375977302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -391,6 +405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 583c30d4d5f9e884cb9117de5e38e0fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentInternalHealth: 0
 --- !u!1001 &1408342246
 Prefab:
   m_ObjectHideFlags: 0
@@ -430,6 +445,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 212819612708943424, guid: 09330507b2e8fba4085a40eee49b1e58,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 50cf27bb8fa39d44089784613116756a, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 09330507b2e8fba4085a40eee49b1e58, type: 2}
   m_IsPrefabParent: 0

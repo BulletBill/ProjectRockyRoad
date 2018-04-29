@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class ShipController : MonoBehaviour {
 
+	// Ship combat stats
+	float DamageMultiplier;
 
+	public float CurrentInternalHealth;
+	float MaxInternalHealth;
+
+	// Ship movement stats
+	float Mass;
 
 	// Use this for initialization
 	void Start () {
