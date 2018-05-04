@@ -9,7 +9,7 @@ public class WeaponCollective : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
-        //Align weapon parents and position
+        // Align weapon parents and position
         if (weapons != null) {
             foreach (Hardpoint h in weapons) {
 				if (h != null && h.weapon != null) {
@@ -27,13 +27,13 @@ public class WeaponCollective : MonoBehaviour {
     //Fires all weapons with matching group
     public void FireWeaponGroup(int group) {
 		foreach (Hardpoint s in weapons) {
-			if (s != null) {
+			if (s != null && s.weapon != null) {
 				if (s.weapon.firingGroup == group) {
 					s.weapon.Fire();
 				}
 			}
 		}
-    }
+	}
 
     void OnDrawGizmos() {
         if (weapons.Count > 0 && drawHardpoints) {

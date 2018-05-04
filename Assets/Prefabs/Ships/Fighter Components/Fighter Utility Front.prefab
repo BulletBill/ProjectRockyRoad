@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4199351302888490}
   - component: {fileID: 212819612708943424}
+  - component: {fileID: 114285651334265014}
   m_Layer: 0
   m_Name: Fighter Utility Front
   m_TagString: Untagged
@@ -40,6 +41,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114285651334265014
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1919085567451194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fffa83a30d51a940a7e81adca24f7e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maximumHealth: 0
+  fixedDamageReduction: 0
+  percentDamageReduction: 0
+  invulnerabilityAfterHit: 0
 --- !u!212 &212819612708943424
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -54,7 +70,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 50cf27bb8fa39d44089784613116756a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

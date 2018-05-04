@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class RockyTypes : MonoBehaviour {
 
-	public enum InputAxis { Horizontal, Vertical, Thrust, Fire1, Fire2, Fire3, Fire4, Fire5, Item1, Item2, Item3, Item4, Item5, MaxAxis}
-
 	// Use this for initialization
 	void Start () {
 		
@@ -18,6 +16,6 @@ public class RockyTypes : MonoBehaviour {
 }
 
 public interface iInputReceiver {
-	void SetAxis(RockyTypes.InputAxis AxisName, float Value);
+	void ProcessInput();
 	float GiveCommand(string Command, float Value);
 }

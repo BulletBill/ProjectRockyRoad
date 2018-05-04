@@ -17,22 +17,24 @@ public class PlayerInstance : MonoBehaviour {
 	//Saved Designs
 
 	//State Data
-	iInputReceiver FocusObject;
+	public GameObject FocusObject;
+	public iInputReceiver FocusReceiver;
 	
 	// Use this for initialization
 	void Start () {
-		if (null == FocusObject) {
-			GameObject.FindGameObjectWithTag("player");
+		if (null == FocusReceiver) {
+			FocusObject = GameObject.FindGameObjectWithTag("Player");
+			if (FocusObject) {
+				FocusReceiver = FocusObject.GetComponent<iInputReceiver>();
+			}
 		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		//Handle and pass input
-		if (null != FocusObject) {
-
-			FocusObject.SetAxis(RockyTypes.InputAxis.Horizontal, Input.GetAxis("Horizontal"));
-			FocusObject.SetAxis(RockyTypes.InputAxis.Fire1, Input.GetAxis("Fire1"));
+		if (null != FocusReceiver) {
+			FocusReceiver.ProcessInput();
 		}
 	}
 }
