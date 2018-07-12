@@ -5,7 +5,7 @@ public class CameraFollowObject : MonoBehaviour {
 	public Transform FollowObject;
 
 	public Vector2 Margin;
-	public Vector2 Smoothing;
+	public float Smoothing;
 
 	public void Start() {
 	}
@@ -16,11 +16,16 @@ public class CameraFollowObject : MonoBehaviour {
 
 		//Move camera to player if following
 		if (FollowObject != null) {
-			if (Mathf.Abs(x - FollowObject.position.x) > Margin.x) {
-				x = Mathf.Lerp(x, FollowObject.position.x, Smoothing.x * Time.deltaTime);
-			}
-			if (Mathf.Abs(y - FollowObject.position.y) > Margin.y) {
-				y = Mathf.Lerp(y, FollowObject.position.y, Smoothing.y * Time.deltaTime);
+			if (Smoothing > 0.0f) {
+				if (Mathf.Abs(x - FollowObject.position.x) > Margin.x) {
+					x = Mathf.Lerp(x, FollowObject.position.x, Smoothing * Time.deltaTime);
+				}
+				if (Mathf.Abs(y - FollowObject.position.y) > Margin.y) {
+					y = Mathf.Lerp(y, FollowObject.position.y, Smoothing * Time.deltaTime);
+				}
+			} else {
+				x = FollowObject.position.x;
+				y = FollowObject.position.y;
 			}
 
 			transform.position = new Vector3(x, y, transform.position.z);

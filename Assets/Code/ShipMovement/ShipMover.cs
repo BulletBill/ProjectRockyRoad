@@ -40,8 +40,10 @@ public class ShipMover : MonoBehaviour {
 	}
 
 	//Private functions
+	private static float DecelBase = 0.6f;
+	private static float DecelFactor = 2.5f;
 	void Decelerate() {
-		currentSpeed *= 0.6f + ((1 - movementStats.deceleration) / 2.5f);
+		currentSpeed *= DecelBase + ((1 - movementStats.deceleration) / DecelFactor);
 	}
 
 	void Accelerate() {

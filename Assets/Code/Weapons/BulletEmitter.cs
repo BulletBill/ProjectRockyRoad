@@ -39,15 +39,16 @@ public class BulletEmitter : MonoBehaviour {
 	}
 
 	void OnDrawGizmos() {
+		Vector3 Pos = transform.position;
 		Gizmos.color = Color.blue;
 
-		Gizmos.DrawSphere(transform.position, 0.025f);
+		Gizmos.DrawSphere(Pos, 0.025f);
 
 		Vector3 directionPoint = Quaternion.AngleAxis(transform.eulerAngles.z - (aimDeviation / 2), Vector3.forward) * Vector3.up;
-		Gizmos.DrawLine(transform.position, transform.position + (directionPoint * 0.5f));
+		Gizmos.DrawLine(Pos, Pos + (directionPoint * 0.5f));
 
 		directionPoint = Quaternion.AngleAxis(transform.eulerAngles.z + (aimDeviation / 2), Vector3.forward) * Vector3.up;
-		Gizmos.DrawLine(transform.position, transform.position + (directionPoint * 0.5f));
+		Gizmos.DrawLine(Pos, Pos + (directionPoint * 0.5f));
 	}
 
 	float GetDeviation() {

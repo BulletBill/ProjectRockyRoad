@@ -9,19 +9,27 @@ public class WeaponCollective : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
-        // Align weapon parents and position
-        if (weapons != null) {
-            foreach (Hardpoint h in weapons) {
+		AlignWeapons();
+    }
+
+	private void OnValidate() {
+		AlignWeapons();
+	}
+
+	void AlignWeapons() {
+		// Align weapon parents and position
+		if (weapons != null) {
+			foreach (Hardpoint h in weapons) {
 				if (h != null && h.weapon != null) {
 					h.weapon.transform.parent = transform;
 					h.weapon.transform.localPosition = new Vector3(h.xOffset, h.yOffset, 0);
 				}
-            }
-        }
-    }
+			}
+		}
+	}
 
-    // Update is called once per frame
-    void Update() {
+	// Update is called once per frame
+	void Update() {
     }
 
     //Fires all weapons with matching group
