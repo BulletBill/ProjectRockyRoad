@@ -19,3 +19,7 @@ public interface iInputReceiver {
 	void ProcessInput();
 	float GiveCommand(string Command, float Value);
 }
+
+public interface iShipInitializer {
+	void InitShip();
+}
