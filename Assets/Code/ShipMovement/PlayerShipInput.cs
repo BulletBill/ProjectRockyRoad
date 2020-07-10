@@ -5,7 +5,7 @@ using System.Collections;
 
 public class PlayerShipInput : MonoBehaviour, iInputReceiver {
 
-	ShipMover mover;
+	public ShipMover mover;
 	WeaponCollective[] weapons;
 
 	// Small ships will act as a turret
