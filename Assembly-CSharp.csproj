@@ -82,6 +82,7 @@
     <Compile Include="Assets\Code\ShipHealth\ShipHealthSystem.cs" />
     <Compile Include="Assets\Code\ShipHealth\ShipSectionBasic.cs" />
     <Compile Include="Assets\Code\ShipMovement\PlayerShipInput.cs" />
+    <Compile Include="Assets\Code\ShipMovement\RacingMover.cs" />
     <Compile Include="Assets\Code\ShipMovement\ShipMovement.cs" />
     <Compile Include="Assets\Code\ShipMovement\ShipMover.cs" />
     <Compile Include="Assets\Code\ShipMovement\path.cs" />
