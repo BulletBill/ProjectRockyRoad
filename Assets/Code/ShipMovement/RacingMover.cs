@@ -23,14 +23,20 @@ public class RacingMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 MoveSpeed = new Vector3(0, Speed, 0);
-        transform.Translate(transform.up * (Speed * Time.deltaTime), Space.World);
+		if (PauseMovement) return;
 
-        if (PauseMovement) return;
+		// Update movement direction
+		MoveDirection = transform.rotation;
+
+        // Move ship based on speed
+        float MoveAngle = Quaternion.Angle(MoveDirection, transform.rotation) + (90 * Mathf.Deg2Rad);
+        Vector3 MoveDelta = new Vector3(Mathf.Cos(MoveAngle), Mathf.Sin(MoveAngle), 0.0f);
+        transform.Translate(MoveDelta * (Speed * Time.deltaTime));
+
+        // Apply input
         transform.Rotate(new Vector3(0, 0, -TurnSpeed) * Time.deltaTime * Input.GetAxis("Horizontal"));
-        MoveDirection = transform.rotation;
 
-        float Accel = Input.GetAxis("Vertical");
+        float Accel = Input.GetAxis("Vertical") * Time.deltaTime * Acceleration;
         Speed = Mathf.Clamp(Speed + Accel, -TopSpeed, TopSpeed);
     }
 }
