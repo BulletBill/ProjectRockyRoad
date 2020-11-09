@@ -1,22 +1,34 @@
 fileFormatVersion: 2
-guid: 81927d53b52b5f347bce58be69aaa08e
+guid: ebabbfd65804c884f9e20b069ba5186f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 380341253349853222
-    second: Shooter Sprites_0
+      213: 549693158767877051
+    second: Pixel Planets_0
   - first:
-      213: 6438007754445562980
-    second: Shooter Sprites_1
+      213: 7726378983162725796
+    second: Pixel Planets_1
   - first:
-      213: 5589018495033331818
-    second: Shooter Sprites_2
+      213: -1226267470452038794
+    second: Pixel Planets_2
   - first:
-      213: 8140450010400479586
-    second: Shooter Sprites_3
+      213: -4835778692065187470
+    second: Pixel Planets_3
   - first:
-      213: -5979335202884712524
-    second: Shooter Sprites_4
+      213: -8716596239719485971
+    second: Pixel Planets_4
+  - first:
+      213: 6191208115381190842
+    second: Pixel Planets_5
+  - first:
+      213: -3847396609539136499
+    second: Pixel Planets_6
+  - first:
+      213: 6804368133809297500
+    second: Pixel Planets_7
+  - first:
+      213: 4198329472487346900
+    second: Pixel Planets_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -62,7 +74,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 0
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -114,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Shooter Sprites_0
+      name: Pixel Planets_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 454
-        width: 20
-        height: 20
+        x: 85
+        y: 426
+        width: 87
+        height: 85
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6284853da5e374500800000000000000
-      internalID: 380341253349853222
+      spriteID: bbb52d7f307e0a700800000000000000
+      internalID: 549693158767877051
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shooter Sprites_1
+      name: Pixel Planets_1
       rect:
         serializedVersion: 2
-        x: 37
-        y: 454
-        width: 22
-        height: 21
+        x: 220
+        y: 422
+        width: 92
+        height: 94
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46420f051f5685950800000000000000
-      internalID: 6438007754445562980
+      spriteID: 4a54573cfbc993b60800000000000000
+      internalID: 7726378983162725796
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shooter Sprites_2
+      name: Pixel Planets_2
       rect:
         serializedVersion: 2
-        x: 65
-        y: 449
-        width: 30
-        height: 30
+        x: 359
+        y: 420
+        width: 91
+        height: 93
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -170,20 +182,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a60dc8795be209d40800000000000000
-      internalID: 5589018495033331818
+      spriteID: 673e6109b3c6bfee0800000000000000
+      internalID: -1226267470452038794
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shooter Sprites_3
+      name: Pixel Planets_3
       rect:
         serializedVersion: 2
-        x: 3
-        y: 421
-        width: 26
-        height: 22
+        x: 78
+        y: 252
+        width: 91
+        height: 89
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,20 +203,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 269debd8720b8f070800000000000000
-      internalID: 8140450010400479586
+      spriteID: 2792d0f86ecd3ecb0800000000000000
+      internalID: -4835778692065187470
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shooter Sprites_4
+      name: Pixel Planets_4
       rect:
         serializedVersion: 2
-        x: 1
-        y: 320
-        width: 94
-        height: 96
+        x: 208
+        y: 241
+        width: 117
+        height: 109
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -212,8 +224,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b781171052250da0800000000000000
-      internalID: -5979335202884712524
+      spriteID: deda30907ed680780800000000000000
+      internalID: -8716596239719485971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Planets_5
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 250
+        width: 133
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab0cfcf7af69be550800000000000000
+      internalID: 6191208115381190842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Planets_6
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 86
+        width: 83
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d04a0620b2d4b9ac0800000000000000
+      internalID: -3847396609539136499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Planets_7
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 81
+        width: 91
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c58d0b044c8fd6e50800000000000000
+      internalID: 6804368133809297500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Planets_8
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 92
+        width: 71
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d259a95966734a30800000000000000
+      internalID: 4198329472487346900
       vertices: []
       indices: 
       edges: []
