@@ -4,16 +4,21 @@ using System.Collections;
 public class GameInstance : MonoBehaviour {
 
 	//Game instance singleton
-	public static GameInstance Game { get; protected set; }
+	public static GameInstance _Game { get; protected set; }
 
 	// Use this for initialization
 	protected virtual void Start() {
-		if (Game == null) {
-			Game = this;
+		if (_Game == null) {
+			_Game = this;
 			DontDestroyOnLoad(this.gameObject);
 		} else {
 			Object.Destroy(this.gameObject);
 			return;
 		}
+	}
+
+	public static GameInstance Game()
+	{
+		return _Game;
 	}
 }

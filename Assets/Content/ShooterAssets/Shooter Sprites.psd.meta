@@ -231,9 +231,9 @@ TextureImporter:
       name: Shooter Sprites_5
       rect:
         serializedVersion: 2
-        x: 41
+        x: 46
         y: 430
-        width: 14
+        width: 4
         height: 4
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
