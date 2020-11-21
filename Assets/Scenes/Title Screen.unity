@@ -146,7 +146,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 84022930}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.8106189, y: 0.9142105, z: -3.5986328}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -164,9 +164,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c48bf1b204be3e64994c48d92bd68af7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Paused: 0
   PlayerShip: {fileID: 0}
   Lives: 0
   Score: 0
+  ScrollSpeed: 1
+  GameSections: 2
 --- !u!1 &1020677307
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,6 +182,7 @@ GameObject:
   - component: {fileID: 1020677309}
   - component: {fileID: 1020677308}
   - component: {fileID: 1020677311}
+  - component: {fileID: 1020677312}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -203,8 +207,8 @@ Camera:
   m_GameObject: {fileID: 1020677307}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -282,6 +286,24 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &1020677312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020677307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddeb9e831f8e19445babbef2c41e1e08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CameraRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
 --- !u!1 &1064690780
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,7 +373,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!4 &1064690782
 Transform:
   m_ObjectHideFlags: 0
@@ -378,6 +400,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96899bbd6b6133b43afa3054854a26cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ActiveWeapon: 1
+  ShotDelay: 0.15
+  Bullet: {fileID: 3808653065168061775, guid: 0650fa7b2485e8045ac28741a5af990e, type: 3}
+  ShotVelocities:
+  - {x: 0, y: 8}
+  ShotOffsets:
+  - {x: -0.1, y: 0}
+  - {x: 0.1, y: 0}
 --- !u!114 &1064690785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,12 +420,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb6870654003b1049b32e2627b32e5d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VertSpeed: 10
-  HorzSpeed: 10
-  AccelTime: 0
+  VertSpeed: 6
+  HorzSpeed: 8
+  AccelTime: 0.1
+  CurrentSpeed: {x: 0, y: 0, z: 0}
+  Acceleration: {x: 0, y: 0}
   MoveBounds:
     serializedVersion: 2
-    x: -6.275
-    y: -4.66
-    width: 12.535
-    height: 9.314
+    x: -6.125
+    y: -4.5415
+    width: 12.25
+    height: 9.083
+  MoveInput: {x: 0, y: 0}

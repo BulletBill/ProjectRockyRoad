@@ -16,9 +16,4 @@ public class GameInstance : MonoBehaviour {
 			return;
 		}
 	}
-
-	public static GameInstance Game()
-	{
-		return _Game;
-	}
 }
