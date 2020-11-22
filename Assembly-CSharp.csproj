@@ -94,6 +94,7 @@
     <Compile Include="Assets\Code\Weapons\Hardpoint.cs" />
     <Compile Include="Assets\Code\Weapons\ShipWeapon.cs" />
     <Compile Include="Assets\Code\Weapons\WeaponCollective.cs" />
+    <Compile Include="Assets\Content\ShooterAssets\MusicController.cs" />
     <Compile Include="Assets\Content\ShooterAssets\ShooterBulletMover.cs" />
     <Compile Include="Assets\Content\ShooterAssets\ShooterCamera.cs" />
     <Compile Include="Assets\Content\ShooterAssets\ShooterGameInstance.cs" />

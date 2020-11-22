@@ -26,7 +26,10 @@ public class AI_Pathfinder : MonoBehaviour {
         //Cache components
 		mover = GetComponent<ShipMover>();
 		weapon = GetComponent<WeaponCollective>();
-		destinationNode = pathToFollow.waypoints[destinationNodeIndex];
+		if (null != pathToFollow)
+		{
+			SetPath(pathToFollow);
+		}
 	}
 	
 	// Update is called once per frame

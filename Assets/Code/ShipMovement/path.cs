@@ -8,7 +8,7 @@ public class path : MonoBehaviour {
 	public Vector2 Origin;
 
 	//Array of Path nodes
-	public List<pathNode> waypoints;
+	public List<pathNode> waypoints = new List<pathNode>();
 
 	// Use this for initialization
 	void Start () {
