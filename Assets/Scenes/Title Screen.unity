@@ -281,7 +281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TrackList:
-  - {fileID: 8300000, guid: c97ef2332816bf54d930852d4882e225, type: 3}
+  - {fileID: 8300000, guid: 3975b6177f9b9db42882c51036f6d327, type: 3}
   TrackNumber: 0
 --- !u!1 &883368861
 GameObject:

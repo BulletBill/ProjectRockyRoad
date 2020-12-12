@@ -18,7 +18,7 @@ public class Splash : MonoBehaviour {
 	void Start () {
 		sr = GetComponent<SpriteRenderer>();
 
-		if (null == sr) { DestroyObject(gameObject); }
+		if (null == sr) { GameObject.Destroy(gameObject); }
 		sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 0.0f);
 
 		fadeInPerSec = 1.0f / FadeInTime;
